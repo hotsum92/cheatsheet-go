@@ -54,4 +54,7 @@ func main() {
 
 	var w bytes.Buffer
 	w = io.MultiWriter(&w, &w)
+
+	_, err = io.writeString(w, "Hello, World!")
+	_, err = io.Copy(w, r)
 }
